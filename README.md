@@ -129,7 +129,8 @@ If you find TubeTune useful:
 
 ---
 
-> “Set your YouTube tune once, and enjoy it forever with TubeTune.” 🎶
+> “Set your YouTube tune once, and enjoy it forever with TubeTune.” 🎶"
+
 <a href="https://www.flaticon.com/free-icons/video-quality" title="video quality icons">Extension Logo created by FACH - Flaticon</a>
 
 <p align="center">
@@ -137,4 +138,3 @@ If you find TubeTune useful:
       <img src="https://api.visitorbadge.io/api/VisitorHit?user=ShubhmDalvi&repo=TubeTune&countColor=%237B1E7A" />
    </a>
 </p>
- <a href="https://www.flaticon.com/free-icons/video-quality" title="video quality icons">Extension Logo created by FACH - Flaticon</a>
