@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    :root {
+      --primary: #ff5252;
+      --primary-dark: #e53935;
+      --secondary: #f5f5f5;
+      --text: #333;
+      --text-light: #666;
+      --background: #fff;
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      width: 300px;
+      padding: 0;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: var(--text);
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: var(--transition);
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: var(--transition);
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: var(--primary);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .quality-selector {
+      background: var(--background);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 16px;
+    }
+
+    .quality-label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .quality-dropdown {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background-color: var(--secondary);
+      font-size: 14px;
+      color: var(--text);
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      background-size: 16px;
+      transition: var(--transition);
+    }
+
+    .quality-dropdown:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(255, 82, 82, 0.2);
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: rgba(76, 175, 80, 0.1);
+      color: #4caf50;
+      font-size: 14px;
+      margin-top: 12px;
+      transition: var(--transition);
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .status.show {
+      opacity: 1;
+      height: auto;
+    }
+
+    .status.error {
+      background-color: rgba(244, 67, 54, 0.1);
+      color: #f44336;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">YT Quality</h1>
+      <label class="toggle-switch">
+        <input type="checkbox" id="extension-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="quality-selector">
+      <label for="quality-select" class="quality-label">Default Quality:</label>
+      <select id="quality-select" class="quality-dropdown">
+        <option value="144p">144p</option>
+        <option value="240p">240p</option>
+        <option value="360p">360p</option>
+        <option value="480p">480p</option>
+        <option value="720p">720p HD</option>
+        <option value="1080p">1080p Full HD</option>
+        <option value="1440p">1440p 2K</option>
+        <option value="2160p">2160p 4K</option>
+        <option value="2880p">2880p 5K</option>
+        <option value="4320p">4320p 8K</option>
+        <option value="highres">Highest Available</option>
+      </select>
+    </div>
+
+    <div id="status-message" class="status"></div>
+
+    <div class="footer">
+      Settings apply to all YouTube videos
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

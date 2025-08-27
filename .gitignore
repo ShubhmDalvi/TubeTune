@@ -1,0 +1,19 @@
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node.js dependencies (if using npm)
+node_modules/
+
+# Build artifacts
+dist/
+build/
+
+# Environment files (API keys, secrets)
+.env
+
+# VS Code settings
+.vscode/
