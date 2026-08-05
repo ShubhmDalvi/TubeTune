@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="150" height="100" alt="TubeTune Logo" src="https://github.com/user-attachments/assets/6d110600-7079-48f7-a4d4-427c65661ab0" />
+  <img width="100" height="100" alt="TubeTune Logo" src="https://github.com/user-attachments/assets/6d110600-7079-48f7-a4d4-427c65661ab0" />
 </p>
 
 # TubeTune – YouTube & YouTube Music Default Quality Setter
